@@ -1,0 +1,256 @@
+/* RESET */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* BODY */
+
+.landingpagebody {
+    background-color: #7b57dd;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+/* Background shapes */
+
+.landingpagebody::before,
+.landingpagebody::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    z-index: 0;
+}
+
+.landingpagebody::before {
+    width: 550px;
+    height: 550px;
+    top: -140px;
+    left: -120px;
+}
+
+.landingpagebody::after {
+    width: 750px;
+    height: 750px;
+    bottom: -200px;
+    right: -160px;
+}
+
+.bgcircle-small {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.10);
+    top: -50px;
+    right: -50px;
+    z-index: 0;
+}
+
+/* Keep content above circles */
+
+.landingpagebody > *:not(.bgcircle-small) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo */
+
+.landingpagelogo {
+    display: block;
+    width: clamp(260px, 50vw, 620px);
+    margin: 0 auto 6px auto;
+}
+
+/* Play button */
+
+.landingpageatag {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(28px, 6vw, 68px);
+    margin: 6px 0 18px 0;
+    color: #2f1180;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+/* Hover effect */
+
+.landingpageatag::before,
+.landingpageatag::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.landingpageatag::before {
+    border-top: 3px solid #2f1180;
+    border-bottom: 3px solid #2f1180;
+    transform: scaleY(2);
+}
+
+.landingpageatag::after {
+    background-color: #2f1180;
+    transform: scale(0);
+}
+
+.landingpageatag:hover {
+    color: white;
+}
+
+.landingpageatag:hover::before {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.landingpageatag:hover::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Description */
+
+.landingpagedescription {
+    color: white;
+    font-size: clamp(14px, 3vw, 26px);
+    max-width: 620px;
+    margin: 0 auto 12px auto;
+    line-height: 1.35;
+}
+
+/* Little character */
+
+.landingpagelittleguy {
+    width: clamp(90px, 15vw, 160px);
+    margin: 4px auto 0 auto;
+    display: block;
+    height: auto;
+}
+
+/* Credits */
+
+.landingpagecredits {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    color: white;
+    font-size: clamp(12px, 2.5vw, 18px);
+    z-index: 2;
+}
+
+
+/* Boxes i lobby */
+
+.box {
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 20px 26px;
+    max-width: 420px;
+    margin: 20px auto;
+    backdrop-filter: blur(6px);
+}
+
+/* Overskrifter */
+
+.box h3, .box h4 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: clamp(20px, 4vw, 26px);
+}
+
+/* Små tekster */
+
+.small {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Input felter */
+
+.box input {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 6px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Knapper generelt */
+
+.box button {
+    margin-top: 8px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: none;
+    background: #2f1180;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.box button:hover {
+    background: #ffffff;
+    color: #2f1180;
+}
+
+/* Player list */
+
+#players {
+    list-style: none;
+    padding: 0;
+    margin-top: 6px;
+}
+
+#players li {
+    color: white;
+    padding: 4px 0;
+    font-size: 15px;
+}
+
+/* Game choices buttons */
+
+#choices button {
+    margin: 6px;
+    min-width: 140px;
+}
+
+/* Question text */
+
+#question h4 {
+    color: white;
+    font-size: clamp(18px, 3vw, 24px);
+    margin: 12px 0;
+}
+
+/* Status text */
+
+#status {
+    color: white;
+    font-size: clamp(20px, 4vw, 26px);
+    margin-bottom: 10px;
+}
+
+/* Result box */
+
+#result {
+    color: white;
+    font-size: 18px;
+}

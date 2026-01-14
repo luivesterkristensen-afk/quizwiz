@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="landingpagebody">
+    <div class="bgcircle-small"></div> 
+    <img class="landingpagelogo" src="{{ url_for('static', filename='pictures/quizwizlogo.svg') }}" alt="QuizWiz Logo">
+    
+    <a class="landingpageatag" href="/lobby">Play</a>
+    
+    <div class="landingpagedescription">
+        <p>Welcome to QuizWiz! Here every contestant gets the chance to choose one of three categories and battle the other players in their chosen category. Click play to start a lobby, invite friends, and compete for the top spot!</p>
+    </div> 
+    
+    <img class="landingpagelittleguy" src="{{ url_for('static', filename='pictures/littleguy.svg') }}" alt="littleguy">
+    
+    <div>
+        <p class="landingpagecredits">Created by Lui and Mingus</p>
+    </div>
+</body>
+</html>

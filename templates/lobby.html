@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>QuizWiz Lobby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+</head>
+<body class="landingpagebody">
+
+<div class="bgcircle-small"></div>
+
+<img class="landingpagelogo" src="{{ url_for('static', filename='pictures/quizwizlogo.svg') }}" alt="QuizWiz Logo">
+
+<div id="login" class="box">
+  <button onclick="createRoom()">Opret rum</button>
+  <div class="small" id="roomcode"></div><br>
+  <input id="name" placeholder="Dit navn">
+  <input id="room" placeholder="Rumkode">
+  <button onclick="joinRoom()">Join</button>
+  <div id="err" style="color:red;"></div>
+</div>
+
+<div id="lobby" class="box">
+  <h3>Lobby</h3>
+  <div class="small">Rumkode: <strong id="roomDisplay"></strong></div>
+  <h4>Spillere</h4>
+  <ul id="players"></ul>
+  <button onclick="startGame()">Start spil</button>
+</div>
+
+<div id="game" class="box">
+  <h3 id="status"></h3>
+  <div id="choices"></div>
+  <div id="question"></div>
+  <div class="small" id="hint"></div>
+</div>
+
+<div id="result" class="box"></div>
+
+<script>
+const socket = io();
+let currentRoom = "";
+let mySid = "";
+let currentRoundId = 0;
+let pickerSid = "";
+
+socket.on("connect", () => { mySid = socket.id; });
+
+function createRoom() {
+  socket.emit("create_room");
+}
+
+socket.on("room_created", data => {
+  document.getElementById("roomcode").innerText = "Rumkode: " + data.room;
+  document.getElementById("room").value = data.room;
+});
+
+function joinRoom() {
+  const name = document.getElementById("name").value.trim();
+  const room = document.getElementById("room").value.trim().toUpperCase();
+  currentRoom = room;
+  socket.emit("join_room", { name, room });
+}
+
+socket.on("joined", data => {
+  currentRoom = data.room;
+  mySid = data.sid || socket.id;
+  document.getElementById("login").style.display = "none";
+  document.getElementById("lobby").style.display = "block";
+  document.getElementById("roomDisplay").innerText = currentRoom;
+});
+
+socket.on("player_list", data => {
+  const ul = document.getElementById("players");
+  ul.innerHTML = "";
+  data.players.forEach(p => {
+    const li = document.createElement("li");
+    li.innerText = p;
+    ul.appendChild(li);
+  });
+});
+
+function startGame() {
+  socket.emit("start_game", { room: currentRoom });
+}
+
+socket.on("round_start", data => {
+  currentRoundId = data.roundId;
+  pickerSid = data.pickerSid;
+  document.getElementById("lobby").style.display = "none";
+  document.getElementById("result").style.display = "none";
+  document.getElementById("game").style.display = "block";
+  document.getElementById("status").innerText = data.picker + " vælger kategori";
+  document.getElementById("hint").innerText = (mySid === pickerSid) ? "Du vælger kategori." : "Venter på valg...";
+
+  const div = document.getElementById("choices");
+  div.innerHTML = "";
+  data.categories.forEach(c => {
+    const b = document.createElement("button");
+    b.innerText = c;
+    b.disabled = (mySid !== pickerSid);
+    b.onclick = () => socket.emit("choose_category", { room: currentRoom, category: c });
+    div.appendChild(b);
+  });
+  document.getElementById("question").innerHTML = "";
+});
+
+socket.on("category_chosen", data => {
+  currentRoundId = data.roundId;
+  document.getElementById("status").innerText = "Kategori: " + data.category;
+  document.getElementById("hint").innerText = "Vælg sværhedsgrad:";
+
+  const div = document.getElementById("choices");
+  div.innerHTML = "";
+  ["easy", "medium", "hard"].forEach(d => {
+    const b = document.createElement("button");
+    b.innerText = d.toUpperCase();
+    b.onclick = () => {
+      div.querySelectorAll("button").forEach(x => x.disabled = true);
+      socket.emit("choose_difficulty", { room: currentRoom, difficulty: d });
+    };
+    div.appendChild(b);
+  });
+  document.getElementById("question").innerHTML = "";
+});
+
+socket.on("question", data => {
+  currentRoundId = data.roundId;
+  const q = document.getElementById("question");
+  q.innerHTML = "<h4>" + data.question + "</h4>";
+
+  const div = document.getElementById("choices");
+  div.innerHTML = "";
+  data.answers.forEach((a, i) => {
+    const b = document.createElement("button");
+    b.innerText = ["A", "B", "C", "D"][i] + ": " + a;
+    b.onclick = () => {
+      div.querySelectorAll("button").forEach(x => x.disabled = true);
+      socket.emit("submit_answer", { room: currentRoom, answer: i });
+    };
+    div.appendChild(b);
+  });
+
+  document.getElementById("hint").innerText = "Svar på spørgsmålet.";
+});
+
+socket.on("answer_feedback", data => {
+  const div = document.getElementById("choices");
+  const buttons = div.querySelectorAll("button");
+  buttons.forEach((b, i) => {
+    b.style.backgroundColor = (i === data.correctIndex) ? "#7CFC7C" : "#FFB6B6";
+    b.disabled = true;
+  });
+  document.getElementById("status").innerText = data.correct ? "Rigtigt!" : "Forkert!";
+  document.getElementById("hint").innerText = "Venter på de andre spillere...";
+});
+
+socket.on("round_end", () => {
+  document.getElementById("hint").innerText = "Runden er slut. Venter på ny runde...";
+});
+
+socket.on("game_over", data => {
+  document.getElementById("game").style.display = "none";
+  const res = document.getElementById("result");
+  res.style.display = "block";
+  let html = "<h2>Resultat</h2>";
+  data.results.forEach(r => {
+    html += r.name + " : " + r.score + "<br>";
+  });
+  html += "<h3>Vinder: " + data.winner + "</h3>";
+  res.innerHTML = html;
+});
+</script>
+
+</body>
+</html>

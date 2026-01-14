@@ -1,0 +1,426 @@
+{
+  "NBA": {
+    "easy": [
+      {
+        "question": "Which player is most associated with the Chicago Bulls dynasty?",
+        "answers": ["Kobe Bryant", "Michael Jordan", "Scottie Pippen", "Dennis Rodman"],
+        "correct": 1
+      },
+      {
+        "question": "Which team is LeBron James most associated with overall?",
+        "answers": ["Heat", "Cavaliers", "Lakers", "All of the above"],
+        "correct": 3
+      },
+      {
+        "question": "What usually happens after a made basket?",
+        "answers": ["Jump ball", "Inbound pass by the other team", "Timeout", "Free throw"],
+        "correct": 1
+      },
+      {
+        "question": "Which player is famous for step-back three-pointers?",
+        "answers": ["Klay Thompson", "James Harden", "Ray Allen", "Damian Lillard"],
+        "correct": 1
+      },
+      {
+        "question": "Which position usually guards the opponent’s best perimeter scorer?",
+        "answers": ["Center", "Point guard", "Wing / guard", "Power forward"],
+        "correct": 2
+      },
+      {
+        "question": "What team did Shaq win his first championships with?",
+        "answers": ["Magic", "Heat", "Lakers", "Suns"],
+        "correct": 2
+      },
+      {
+        "question": "Which player is known for clutch buzzer beaters?",
+        "answers": ["Giannis", "Damian Lillard", "Rudy Gobert", "Chris Paul"],
+        "correct": 1
+      },
+      {
+        "question": "What does a double-double mean?",
+        "answers": ["Two dunks", "Double points", "Two stats in double digits", "Two fouls"],
+        "correct": 2
+      },
+      {
+        "question": "Which team has been historically linked to Showtime basketball?",
+        "answers": ["Celtics", "Lakers", "Bulls", "Knicks"],
+        "correct": 1
+      },
+      {
+        "question": "What is the main role of a center?",
+        "answers": ["Shoot threes", "Handle the ball", "Protect the rim and rebound", "Run plays"],
+        "correct": 2
+      }
+    ],
+
+    "medium": [
+      {
+        "question": "Which team blew a 3–1 lead in the 2016 Finals?",
+        "answers": ["Cavaliers", "Warriors", "Spurs", "Heat"],
+        "correct": 1
+      },
+      {
+        "question": "Who won Finals MVP in 2014?",
+        "answers": ["Tim Duncan", "LeBron James", "Kawhi Leonard", "Tony Parker"],
+        "correct": 2
+      },
+      {
+        "question": "Which team drafted Kobe Bryant?",
+        "answers": ["Lakers", "Hornets", "Suns", "Bulls"],
+        "correct": 1
+      },
+      {
+        "question": "Which player won MVP at the youngest age?",
+        "answers": ["LeBron James", "Derrick Rose", "Kevin Durant", "Luka Dončić"],
+        "correct": 1
+      },
+      {
+        "question": "Which team drafted Giannis Antetokounmpo?",
+        "answers": ["Knicks", "Bucks", "Suns", "Hawks"],
+        "correct": 1
+      }
+    ],
+
+    "hard": [
+      {
+        "question": "Which team had the 73–9 regular season?",
+        "answers": ["Bulls", "Warriors", "Lakers", "Celtics"],
+        "correct": 1
+      },
+      {
+        "question": "Who won Finals MVP in 2015?",
+        "answers": ["LeBron James", "Stephen Curry", "Andre Iguodala", "Klay Thompson"],
+        "correct": 2
+      },
+      {
+        "question": "Which player has the most career points in NBA history?",
+        "answers": ["Kareem", "LeBron James", "Kobe Bryant", "Michael Jordan"],
+        "correct": 1
+      },
+      {
+        "question": "Which team drafted Dirk Nowitzki?",
+        "answers": ["Mavericks", "Bucks", "Suns", "Spurs"],
+        "correct": 1
+      }
+    ]
+  },
+
+  "Music": {
+    "easy": [
+      {
+        "question": "Which band released Smells Like Teen Spirit?",
+        "answers": ["Nirvana", "Pearl Jam", "Soundgarden", "Foo Fighters"],
+        "correct": 0
+      },
+      {
+        "question": "Who sang ...Baby One More Time?",
+        "answers": ["Christina Aguilera", "Britney Spears", "Mandy Moore", "Jessica Simpson"],
+        "correct": 1
+      }
+    ],
+    "medium": [
+      {
+        "question": "Which band released Californication?",
+        "answers": ["Red Hot Chili Peppers", "Foo Fighters", "Nirvana", "Pearl Jam"],
+        "correct": 0
+      }
+    ],
+    "hard": [
+      {
+        "question": "Who produced My Beautiful Dark Twisted Fantasy?",
+        "answers": ["Kanye West", "Jay-Z", "Drake", "Kendrick Lamar"],
+        "correct": 0
+      }
+    ]
+  },
+
+  "Nature": {
+    "easy": [
+      {
+        "question": "What covers most of the Earth’s surface?",
+        "answers": ["Forests", "Oceans", "Deserts", "Ice"],
+        "correct": 1
+      },
+      {
+        "question": "Which planet is closest to the Sun?",
+        "answers": ["Mercury", "Venus", "Earth", "Mars"],
+        "correct": 0
+      }
+    ],
+    "medium": [
+      {
+        "question": "Which ocean is the smallest?",
+        "answers": ["Atlantic", "Pacific", "Arctic", "Indian"],
+        "correct": 2
+      }
+    ],
+    "hard": [
+      {
+        "question": "Which tectonic boundary type moves plates past each other?",
+        "answers": ["Divergent", "Convergent", "Transform", "Subduction"],
+        "correct": 2
+
+      }
+    ]
+  },
+
+  "Animals": {
+    "easy": [
+      {
+        "question": "Which animal is known as man's best friend?",
+        "answers": ["Cat","Dog","Horse","Rabbit"],
+        "correct": 1
+      },
+      {
+        "question": "What do cows mainly eat?",
+        "answers": ["Meat","Fish","Grass","Fruit"],
+        "correct": 2
+      },
+      {
+        "question": "Which animal says meow?",
+        "answers": ["Dog","Cow","Cat","Sheep"],
+        "correct": 2
+      },
+      {
+        "question": "Which animal is the largest land animal?",
+        "answers": ["Giraffe","Elephant","Rhino","Hippo"],
+        "correct": 1
+      },
+      {
+        "question": "Where do fish live?",
+        "answers": ["Trees","Desert","Water","Caves"],
+        "correct": 2
+      }
+    ],
+
+    "medium": [
+      {
+        "question": "Which animal is the fastest land animal?",
+        "answers": ["Lion","Horse","Cheetah","Leopard"],
+        "correct": 2
+      },
+      {
+        "question": "Which animal uses echolocation?",
+        "answers": ["Dog","Bat","Eagle","Snake"],
+        "correct": 1
+      },
+      {
+        "question": "Which animal can change its color?",
+        "answers": ["Snake","Chameleon","Lizard","Frog"],
+        "correct": 1
+      },
+      {
+        "question": "Which bird cannot fly?",
+        "answers": ["Eagle","Penguin","Sparrow","Owl"],
+        "correct": 1
+      },
+      {
+        "question": "Which animal is a marsupial?",
+        "answers": ["Bear","Kangaroo","Wolf","Monkey"],
+        "correct": 1
+      }
+    ],
+
+    "hard": [
+      {
+        "question": "What is the largest animal to ever live on Earth?",
+        "answers": ["Elephant","Blue whale","T-rex","Giraffe"],
+        "correct": 1
+      },
+      {
+        "question": "Which animal has three hearts?",
+        "answers": ["Shark","Dolphin","Octopus","Whale"],
+        "correct": 2
+      },
+      {
+        "question": "Which animal can regenerate lost limbs?",
+        "answers": ["Dog","Starfish","Turtle","Bird"],
+        "correct": 1
+      },
+      {
+        "question": "Which animal has the strongest bite force?",
+        "answers": ["Lion","Shark","Crocodile","Bear"],
+        "correct": 2
+      },
+      {
+        "question": "Which animal does not have a brain?",
+        "answers": ["Jellyfish","Octopus","Ant","Worm"],
+        "correct": 0
+      }
+    ]
+  },
+
+  "Movies": {
+    "easy": [
+      {
+        "question": "Who is the main character in Toy Story?",
+        "answers": ["Buzz Lightyear","Woody","Jessie","Rex"],
+        "correct": 1
+      },
+      {
+        "question": "Which movie features a talking snowman named Olaf?",
+        "answers": ["Tangled","Frozen","Moana","Encanto"],
+        "correct": 1
+      },
+      {
+        "question": "What color is Shrek?",
+        "answers": ["Blue","Green","Yellow","Brown"],
+        "correct": 1
+      },
+      {
+        "question": "Which movie is about dinosaurs brought back to life?",
+        "answers": ["Jaws","King Kong","Jurassic Park","Godzilla"],
+        "correct": 2
+      },
+      {
+        "question": "Which superhero carries a shield?",
+        "answers": ["Iron Man","Thor","Captain America","Hulk"],
+        "correct": 2
+      }
+    ],
+
+    "medium": [
+      {
+        "question": "Who directed Jurassic Park?",
+        "answers": ["George Lucas","Steven Spielberg","James Cameron","Ridley Scott"],
+        "correct": 1
+      },
+      {
+        "question": "In Harry Potter, what house is Harry sorted into?",
+        "answers": ["Slytherin","Ravenclaw","Gryffindor","Hufflepuff"],
+        "correct": 2
+      },
+      {
+        "question": "Which actor played Iron Man?",
+        "answers": ["Chris Evans","Robert Downey Jr.","Chris Hemsworth","Mark Ruffalo"],
+        "correct": 1
+      },
+      {
+        "question": "Which movie is about dreams within dreams?",
+        "answers": ["Interstellar","Inception","Tenet","Memento"],
+        "correct": 1
+      },
+      {
+        "question": "Which movie features a time-traveling DeLorean?",
+        "answers": ["The Time Machine","Back to the Future","Terminator","Looper"],
+        "correct": 1
+      }
+    ],
+
+    "hard": [
+      {
+        "question": "Who directed Pulp Fiction?",
+        "answers": ["Martin Scorsese","Quentin Tarantino","Stanley Kubrick","Francis Coppola"],
+        "correct": 1
+      },
+      {
+        "question": "Which movie is told almost entirely backward?",
+        "answers": ["Tenet","Memento","Inception","Primer"],
+        "correct": 1
+      },
+      {
+        "question": "Which film popularized the bullet time effect?",
+        "answers": ["Blade","The Matrix","Tron","Dark City"],
+        "correct": 1
+      },
+      {
+        "question": "Which movie features the planet Arrakis?",
+        "answers": ["Star Wars","Avatar","Dune","Blade Runner"],
+        "correct": 2
+      },
+      {
+        "question": "Which film won Best Picture in 2020?",
+        "answers": ["1917","Joker","Parasite","Once Upon a Time in Hollywood"],
+        "correct": 2
+      }
+    ]
+  },
+
+  "Countries": {
+    "easy": [
+      {
+        "question": "Which country is known for the Eiffel Tower?",
+        "answers": ["Italy","Spain","France","Germany"],
+        "correct": 2
+      },
+      {
+        "question": "Which country is famous for pizza and pasta?",
+        "answers": ["Greece","Italy","France","Portugal"],
+        "correct": 1
+      },
+      {
+        "question": "Which country has Tokyo?",
+        "answers": ["China","South Korea","Japan","Thailand"],
+        "correct": 2
+      },
+      {
+        "question": "Which country has a maple leaf on its flag?",
+        "answers": ["USA","UK","Canada","Australia"],
+        "correct": 2
+      },
+      {
+        "question": "Which country is shaped like a boot?",
+        "answers": ["Spain","Greece","Italy","Turkey"],
+        "correct": 2
+      }
+    ],
+
+    "medium": [
+      {
+        "question": "What is the capital of Canada?",
+        "answers": ["Toronto","Vancouver","Ottawa","Montreal"],
+        "correct": 2
+      },
+      {
+        "question": "Which country has the most people in the world?",
+        "answers": ["India","China","USA","Indonesia"],
+        "correct": 0
+      },
+      {
+        "question": "Which country has Mount Fuji?",
+        "answers": ["China","Japan","South Korea","Nepal"],
+        "correct": 1
+      },
+      {
+        "question": "Which country is partly in Europe and Asia?",
+        "answers": ["Greece","Italy","Turkey","Spain"],
+        "correct": 2
+      },
+      {
+        "question": "Which country is the smallest in the world?",
+        "answers": ["Monaco","San Marino","Vatican City","Liechtenstein"],
+        "correct": 2
+      }
+    ],
+
+    "hard": [
+      {
+        "question": "Which country was formerly called Persia?",
+        "answers": ["Iraq","Turkey","Iran","Syria"],
+        "correct": 2
+      },
+      {
+        "question": "Which country has the most islands in the world?",
+        "answers": ["Indonesia","Philippines","Sweden","Norway"],
+        "correct": 2
+      },
+      {
+        "question": "Which country has the longest land border?",
+        "answers": ["USA–Canada","Russia–China","Argentina–Chile","India–Pakistan"],
+        "correct": 0
+      },
+      {
+        "question": "Which country has three capital cities?",
+        "answers": ["Australia","Bolivia","South Africa","Malaysia"],
+        "correct": 2
+      },
+      {
+        "question": "Which country does not use the metric system officially?",
+        "answers": ["USA","Canada","Germany","Japan"],
+        "correct": 0
+      }
+    ]
+  }
+}
+
+
